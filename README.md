@@ -1,5 +1,9 @@
 # reddit-videodl-cli
 
+## Prerequisites
+
+- ffmpeg
+
 ## Usage
 
 ```
