@@ -4,6 +4,12 @@
 
 - ffmpeg
 
+## Installation
+
+```
+npm i -g github:MrMysterius/reddit-video-cli
+```
+
 ## Usage
 
 ```
