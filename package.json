@@ -1,0 +1,27 @@
+{
+  "name": "reddit-videodl-cli",
+  "version": "1.0.0",
+  "description": "Reddit Video Downloader Command Line Tool",
+  "main": "bin/index.js",
+  "bin": {
+    "reddit-videodl": "./bin/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.6",
+    "https": "^1.0.0",
+    "yargs": "^17.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Reddit",
+    "Video",
+    "Downloader"
+  ],
+  "repository": "git@github.com:MrMysterius/reddit-videodl-cli.git",
+  "author": "Mr Mysterius",
+  "license": "MIT"
+}
