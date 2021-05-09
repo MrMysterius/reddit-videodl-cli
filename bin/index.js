@@ -15,9 +15,9 @@ console.log(options.u);
 getID(options.u)
   .then(async (id) => {
     if (!(await downloadVideo(id))) return;
-    if (!(await downloadAudio(id))) return;
+    let isAudio = await downloadAudio(id);
 
-    if (!(await combine(id))) return;
+    if (!(await combine(id, isAudio))) return;
   })
   .catch((err) => {
     console.log(err);

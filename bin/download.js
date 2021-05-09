@@ -14,6 +14,7 @@ const downloadVideo = async function (id, attempt = 0) {
     const url = files.host_url.replace(/{id}/g, id).replace(/{file}/g, files.video[attempt]);
     console.log(url);
     https.get(url, (res) => {
+      if (res.statusCode == "403") return resolve(await downloadVideo(id, ++attempt));
       let file = fs.createWriteStream(path.resolve(process.cwd(), `${id}_video.mp4`), { autoClose: true });
 
       res.on("data", (chunk) => {
@@ -39,6 +40,7 @@ const downloadAudio = async function (id, attempt = 0) {
     const url = files.host_url.replace(/{id}/g, id).replace(/{file}/g, files.audio[attempt]);
     console.log(url);
     https.get(url, (res) => {
+      if (res.statusCode == "403") return resolve(await downloadAudio(id, ++attempt));
       let file = fs.createWriteStream(path.resolve(process.cwd(), `${id}_audio.mp4`), { autoClose: true });
 
       res.on("data", (chunk) => {
